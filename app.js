@@ -1,12 +1,17 @@
-console.log(123)
-// var watermark = require('jimp-watermark');
-// var options = {
-//     'opacity': 0.6, //Should be less than one
-// 	'textSize': 1, //Should be between 1-8
-//     'dstPath' : './4.jpg'
-// };
-// watermark.addWatermark('/Users/chris/Documents/work/ACR/0917/1.jpeg', '/Users/chris/Documents/work/ACR/0917/Lovepik_com-450073212-watercolor painting flower leaf on transparent background.png',options).then(data => {
-//     console.log(data);
-// }).catch(err => {
-//     console.log(err);
-// });
+const path = require('path');
+const watermark = require('./tool/watermark');
+const defaultWatermark = path.join(__dirname,'resource','watermark','acr.png')
+let defaultInput = path.join(__dirname,'resource','testImage','test.jpeg')
+let dstPath =  path.join(__dirname,'output','test.png')
+console.log(watermark)
+
+const options = {
+    'opacity': 0.6, //Should be less than one
+    dstPath
+};
+
+watermark.addWatermark(defaultInput, defaultWatermark,options).then(data => {
+        console.log(data);
+    }).catch(err => {
+        console.log(err);
+    });
