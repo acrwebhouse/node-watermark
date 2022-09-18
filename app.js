@@ -1,12 +1,13 @@
 const path = require('path');
 const watermark = require('./tool/watermark');
 const defaultWatermark = path.join(__dirname,'resource','watermark','acr.png')
+// const defaultWatermark = path.join(__dirname,'resource','watermark','test.png')
 let defaultInput = path.join(__dirname,'resource','testImage','test.jpeg')
 let dstPath =  path.join(__dirname,'output','test.png')
 console.log(watermark)
 
 const options = {
-    'opacity': 0.6, //Should be less than one
+    'opacity': 0.3, //Should be less than one
     dstPath
 };
 

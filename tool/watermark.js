@@ -69,6 +69,7 @@ const checkOptions = (options) => {
 module.exports.addTextWatermark = async (mainImage, options) => {
     try {
         options = checkOptions(options);
+        console.log('=addTextWatermark===options==',options)
         const main = await Jimp.read(mainImage);
         const maxHeight = main.getHeight();
         const maxWidth = main.getWidth();
